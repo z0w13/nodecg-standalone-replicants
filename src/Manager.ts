@@ -1,6 +1,7 @@
 import { Replicant } from './Replicant'
+import { ReplicantOptions } from 'nodecg/types/lib/replicant'
 
-export default class Manager {
+export class Manager {
   socket: SocketIOClient.Socket
   bundleName: string
 
@@ -10,7 +11,7 @@ export default class Manager {
     this.socket.emit('joinRoom', this.bundleName)
   }
 
-  newReplicant<V> (name: string) {
-    return new Replicant<V>(name, this.bundleName, {}, this.socket)
+  newReplicant<V> (name: string, opts: ReplicantOptions<V> = {}) {
+    return new Replicant<V>(name, this.bundleName, opts, this.socket)
   }
 }

@@ -7,6 +7,10 @@
   "author": "Z0W13",
   "license": "MIT",
   "private": false,
+  "scripts": {
+    "build": "tsc --build",
+    "test": "npm run build && ava --config ava.config.js"
+  },
   "dependencies": {
     "@types/clone": "^2.1.1",
     "@types/debug": "^4.1.7",
@@ -24,10 +28,15 @@
     "typescript": "^4.4.2"
   },
   "devDependencies": {
+    "ava": "^3.15.0",
     "eslint": "^7.32.0",
     "eslint-config-standard": "^16.0.3",
     "eslint-plugin-import": "^2.24.2",
     "eslint-plugin-node": "^11.1.0",
-    "eslint-plugin-promise": "^5.1.0"
+    "eslint-plugin-promise": "^5.1.0",
+    "fs-extra": "^10.0.0",
+    "puppeteer": "^10.2.0",
+    "temp": "^0.9.4",
+    "uuid": "^8.3.2"
   }
 }
